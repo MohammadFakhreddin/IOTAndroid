@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.RadX"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    //compile files('src/main/java/com/example/espadan/lib/commons-codec-1.9.jar')
+    compile files('src/main/java/com/example/espadan/lib/commons-logging-1.2.jar')
+    //compile files('src/main/java/com/example/espadan/lib/fluent-hc-4.5.2.jar')
+    compile files('src/main/java/com/example/espadan/lib/httpclient-4.5.2.jar')
+    // compile files('src/main/java/com/example/espadan/lib/httpclient-cache-4.5.2.jar')
+    //compile files('src/main/java/com/example/espadan/lib/httpclient-win-4.5.2.jar')
+    compile files('src/main/java/com/example/espadan/lib/httpcore-4.4.4.jar')
+    //compile files('src/main/java/com/example/espadan/lib/httpmime-4.5.2.jar')
+    compile files('src/main/java/com/example/espadan/lib/jna-4.1.0.jar')
+    compile files('src/main/java/com/example/espadan/lib/jna-platform-4.1.0.jar')
+    //    compile group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
+    //    compile('org.apache.httpcomponents:httpmime:4.3') {
+    //        exclude module: "httpclient"
+    //  compile files('src/main/java/com/example/espadan/lib/commons-codec-1.9.jar')
+    compile files('src/main/java/com/example/espadan/lib/fluent-hc-4.5.2.jar')
+    //compile files('src/main/java/com/example/espadan/lib/httpclient-cache-4.5.2.jar')
+    //compile files('src/main/java/com/example/espadan/lib/httpmime-4.5.2.jar'){
+    //    compile('org.apache.httpcomponents:httpmime:4.5.2') {
+    //  exclude module: 'httpclient'
+    //}
+    //compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
+    compile files('libs/httpmime-4.3.1.jar')
+}
